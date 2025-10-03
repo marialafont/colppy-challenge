@@ -45,27 +45,36 @@ Desarrollar una **aplicación web frontend** que:
 
 ---
 
+## ✅ Qué vamos a evaluar
+
+1. **Arquitectura y calidad de código**
+   - Organización del proyecto y componentes.
+   - Uso correcto de estado y hooks.
+   - Claridad y buenas prácticas.
+
+2. **Experiencia de usuario**
+   - Diseño responsive.
+   - Claridad de la interfaz y accesibilidad básica.
+   - Feedback visual (ej: alertas, loading states).
+
+3. **Rendimiento**
+   - Manejo eficiente de actualizaciones periódicas.
+   - Evitar renders innecesarios.
+
+4. **Entrega y documentación**
+   - Instrucciones claras en el README.
+   - Deploy funcionando (Netlify / Vercel / Railway).
+
+5. **Extras (opcional)**
+   - Tests unitarios básicos.
+   - Funcionalidades adicionales (ej: filtros, histórico).
+   - CI/CD o automatización de deploy.
+
+---
+
 ## 🛠️ Setup inicial
 
 ### 1. Clonar el repo
 ```bash
 git clone https://github.com/AleSotoColppy/challenge-frontend-sr.git
 cd challenge-frontend-sr
-
-## Setup
-
-### 1. Instalar API
-```bash
-cd api
-npm install
-npm start
-```
-
-### 2. Instalar Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Abrir en: http://localhost:5173

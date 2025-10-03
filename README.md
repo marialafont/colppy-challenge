@@ -80,14 +80,14 @@ git clone https://github.com/AleSotoColppy/challenge-frontend-sr.git
 cd challenge-frontend-sr
 ```
 
-### 2. Clonar el repo
+### 2. Levantar la api
 ```bash
 cd api
 npm install
 npm start
 ```
 
-### 2. Clonar el repo
+### 3. Correr el Front
 ```bash
 
 cd frontend

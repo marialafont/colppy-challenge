@@ -1,6 +1,6 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './config/queryClient';
-import Dashboard from './components/Dashboard';
+import { Dashboard } from './components/dashboard';
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import { THRESHOLDS } from '../utils/constants';
+import { THRESHOLDS } from '../../utils/constants';
 
 const KPICard = ({ metric, value, config, showAlert = false }) => {
   const { label, icon, format } = config;

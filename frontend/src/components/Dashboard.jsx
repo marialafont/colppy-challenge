@@ -34,8 +34,16 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">📊 Dashboard en Tiempo Real</h1>
-          <p className="text-gray-600">Actualización automática cada 5 segundos</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">📊 Dashboard en Tiempo Real</h1>
+              <p className="text-gray-600">Actualización automática cada 5 segundos</p>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-lg">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-green-700">Activo</span>
+            </div>
+          </div>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

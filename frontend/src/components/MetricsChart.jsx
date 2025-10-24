@@ -20,10 +20,16 @@ const MetricsChart = ({ data }) => {
     .reverse();
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-xl font-bold text-gray-900 mb-4">📈 Evolución de Métricas</h2>
+    <div
+      className="bg-white rounded-lg shadow-lg p-6"
+      role="region"
+      aria-label="Gráfico de evolución de métricas"
+    >
+      <h2 className="text-xl font-bold text-gray-900 mb-4" id="chart-title">
+        📈 Evolución de Métricas
+      </h2>
       <ResponsiveContainer width="100%" height={400}>
-        <LineChart data={chartData}>
+        <LineChart data={chartData} aria-labelledby="chart-title">
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis yAxisId="left" />

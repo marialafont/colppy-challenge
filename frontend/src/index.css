@@ -4,8 +4,7 @@
 
 @layer base {
   body {
-    @apply antialiased;
-    @apply bg-gradient-to-br from-gray-50 via-gray-50 to-blue-50;
+    @apply antialiased bg-gradient-to-br from-neutral-50 via-blue-50/30 to-purple-50/20;
   }
 
   h1,
@@ -14,33 +13,71 @@
   h4,
   h5,
   h6 {
-    @apply font-bold;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-3xl shadow-card border border-white/60;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover -translate-y-0.5;
+  }
+
+  .card-glass {
+    @apply bg-white/40 backdrop-blur-md rounded-3xl shadow-glass border border-white/80;
+  }
+
+  .icon-container {
+    @apply p-3 rounded-2xl shadow-soft;
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .icon-container:hover {
+    @apply scale-110;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-white/80 backdrop-blur-sm shadow-soft;
+  }
+
+  .input-glass {
+    @apply bg-white/50 backdrop-blur-sm border border-white/60 rounded-2xl;
+    @apply focus:bg-white/70 focus:border-primary-300 focus:ring-2 focus:ring-primary-200;
+    @apply transition-all duration-200;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800;
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+
+  .text-gradient-primary {
+    @apply text-gradient from-primary-600 to-primary-400;
   }
 
   .text-gradient-success {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-success-600 to-success-800;
+    @apply text-gradient from-success-600 to-success-400;
   }
 
   .text-gradient-danger {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-danger-600 to-danger-800;
+    @apply text-gradient from-danger-600 to-danger-400;
   }
 
-  .border-gradient {
-    border-image: linear-gradient(135deg, #3b82f6, #2563eb) 1;
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary-500 to-primary-600;
   }
 
-  .card-hover {
-    @apply transition-all duration-300 ease-in-out;
-    @apply hover:shadow-soft-lg hover:-translate-y-1;
+  .bg-gradient-success {
+    @apply bg-gradient-to-br from-success-500 to-success-600;
   }
 
-  .glass-effect {
-    @apply bg-white/80 backdrop-blur-sm;
+  .bg-gradient-danger {
+    @apply bg-gradient-to-br from-danger-500 to-danger-600;
   }
 }

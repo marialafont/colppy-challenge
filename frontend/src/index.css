@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+    @apply bg-gradient-to-br from-gray-50 via-gray-50 to-blue-50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800;
+  }
+
+  .text-gradient-success {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-success-600 to-success-800;
+  }
+
+  .text-gradient-danger {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-danger-600 to-danger-800;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #3b82f6, #2563eb) 1;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-soft-lg hover:-translate-y-1;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm;
+  }
+}

@@ -72,36 +72,21 @@ export default {
           950: '#0a0a0a',
         },
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-soft-purple': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'gradient-soft-blue': 'linear-gradient(135deg, #667eea 0%, #4c9aff 100%)',
-        'gradient-soft-pink': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-      },
       boxShadow: {
-        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
         card: '0 4px 24px -4px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 12px 40px -8px rgba(0, 0, 0, 0.12)',
         soft: '0 2px 12px rgba(0, 0, 0, 0.04)',
         'soft-lg': '0 8px 24px rgba(0, 0, 0, 0.06)',
-        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-        'soft-xs': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
         'soft-sm': '0 2px 4px 0 rgba(0, 0, 0, 0.04)',
       },
       borderRadius: {
         '2xl': '1rem',
         '3xl': '1.5rem',
-        '4xl': '2rem',
-      },
-      backdropBlur: {
-        xs: '2px',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
         'fade-in-up': 'fadeInUp 0.6s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
-        'slide-in-right': 'slideInRight 0.4s ease-out',
       },
       keyframes: {
         fadeIn: {
@@ -126,16 +111,6 @@ export default {
           '100%': {
             opacity: '1',
             transform: 'scale(1)',
-          },
-        },
-        slideInRight: {
-          '0%': {
-            opacity: '0',
-            transform: 'translateX(20px)',
-          },
-          '100%': {
-            opacity: '1',
-            transform: 'translateX(0)',
           },
         },
       },

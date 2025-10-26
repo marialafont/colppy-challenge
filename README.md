@@ -206,17 +206,17 @@ netlify deploy --prod --dir=dist
 
 ### Optimizaciones Implementadas
 
-- Bundle size optimizado con Vite
-- Lazy loading de componentes
-- React Query cache para reducir requests
-- Memoización de cálculos pesados
-- Optimización de re-renders con React.memo
-- Assets optimizados (SVG para iconos)
+- **Code splitting**: Recharts y React Query separados en chunks independientes
+- **Bundle size optimizado**: De 508KB a chunks de 454KB (recharts), 39KB (react-query) y 15KB (main)
+- **React Query cache**: Reduce requests innecesarios al servidor
+- **Tailwind purged**: Solo clases utilizadas en el build final
+- **Assets optimizados**: SVG para iconos con Lucide React
 
 ### Bundle Size
 
-- Gzip: ~45KB
-- Brotli: ~38KB
+- Main chunk: ~15KB (gzip: ~5KB)
+- Recharts chunk: ~454KB (gzip: ~140KB)
+- React Query chunk: ~39KB (gzip: ~12KB)
 
 ## 🔧 Troubleshooting
 

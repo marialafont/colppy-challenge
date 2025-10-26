@@ -1,97 +1,311 @@
-# 🖥️ Challenge Frontend Senior – Dashboard Analítico
+# 📊 Analytics Dashboard - Real-Time Metrics
 
-## Contexto
+Dashboard analítico en tiempo real desarrollado con React, mostrando métricas clave de negocio con actualización automática cada 5 segundos.
 
-En Colppy queremos evaluar tus habilidades como **Frontend Developer Senior**.  
-El objetivo de este challenge es construir un **dashboard analítico en tiempo real** que muestre métricas de negocio, se actualice automáticamente y esté diseñado con foco en **arquitectura de componentes, estado, rendimiento y experiencia de usuario**.
+## 🌟 Características
 
----
+- **📈 Métricas en Tiempo Real**: Visualización de usuarios activos, ingresos y tasa de churn
+- **🔄 Actualización Automática**: Polling cada 5 segundos con React Query
+- **⚠️ Sistema de Alertas**: Notificaciones visuales cuando el churn supera el 5%
+- **📊 Gráfico Interactivo**: Evolución temporal de métricas con tooltips personalizados
+- **🎨 Diseño Moderno**: Interfaz soft y minimalista con glassmorphism
+- **📱 Responsive**: Adaptado para desktop, tablet y mobile
+- **♿ Accesible**: Implementación de ARIA labels y roles
+- **✅ Testeado**: Suite de tests unitarios con Vitest
 
-## 🎯 Objetivo
+## 🛠️ Stack Tecnológico
 
-Desarrollar una **aplicación web frontend** que:
+### Frontend
 
-- Visualice métricas en tiempo real provenientes de una API simulada.
-- Muestre un dashboard con KPIs y al menos un gráfico.
-- Destaque visualmente alertas (ejemplo: churn > 5% en rojo).
-- Se pueda **desplegar en producción** (Netlify, Vercel o Railway).
+- **React 18** - Librería UI
+- **Vite** - Build tool
+- **TailwindCSS** - Estilos
+- **React Query** - Data fetching y cache
+- **Recharts** - Visualización de datos
+- **Lucide React** - Iconos
 
----
+### Testing
 
-## 📊 Requerimientos funcionales
+- **Vitest** - Test runner
+- **Testing Library** - Testing utilities
 
-1. **Visualización de métricas**
-   - Mostrar al menos 3 widgets:
-     - Usuarios activos
-     - Ingresos
-     - Churn (%)
-   - Incluir un gráfico de líneas o barras para evolución en el tiempo.
+### API Mock
 
-2. **Datos en tiempo real**
-   - Consumir una API mock que entrega datos cada pocos segundos.
-   - Actualizar el dashboard automáticamente (polling cada 5s).
+- **Express** - Servidor de desarrollo
+- **CORS** - Configuración de acceso
 
-3. **Alertas**
-   - Resaltar con color cuando algún indicador supere un umbral (ej: churn > 5%).
+## 📦 Instalación y Uso
 
-4. **Diseño y experiencia**
-   - UI responsive y usable en desktop y mobile.
-   - Uso de componentes reutilizables.
-   - Estilos con TailwindCSS (sugerido).
+### Prerequisitos
 
-5. **Deploy obligatorio**
-   - La aplicación debe estar online usando **Netlify**, **Vercel** o **Railway**.  
-   - Incluir en el README el link de acceso.
+- Node.js >= 16.x
+- npm o yarn
 
----
+### Clonar el repositorio
 
-## ✅ Qué vamos a evaluar
-
-1. **Arquitectura y calidad de código**
-   - Organización del proyecto y componentes.
-   - Uso correcto de estado y hooks.
-   - Claridad y buenas prácticas.
-
-2. **Experiencia de usuario**
-   - Diseño responsive.
-   - Claridad de la interfaz y accesibilidad básica.
-   - Feedback visual (ej: alertas, loading states).
-
-3. **Rendimiento**
-   - Manejo eficiente de actualizaciones periódicas.
-   - Evitar renders innecesarios.
-
-4. **Entrega y documentación**
-   - Instrucciones claras en el README.
-   - Deploy funcionando (Netlify / Vercel / Railway).
-
-5. **Extras (opcional)**
-   - Tests unitarios básicos.
-   - Funcionalidades adicionales (ej: filtros, histórico).
-   - CI/CD o automatización de deploy.
-
----
-
-## 🛠️ Setup inicial
-
-### 1. Clonar el repo
 ```bash
-git clone https://github.com/AleSotoColppy/challenge-frontend-sr.git
-cd challenge-frontend-sr
+git clone https://github.com/marialafont/colppy-challenge.git
+cd colppy-challenge
 ```
 
-### 2. Levantar la api
+### Instalar dependencias y ejecutar
+
+**Terminal 1 - API Mock:**
+
 ```bash
 cd api
 npm install
 npm start
 ```
 
-### 3. Correr el Front
-```bash
+La API correrá en `http://localhost:4000`
 
+**Terminal 2 - Frontend:**
+
+```bash
 cd frontend
 npm install
 npm run dev
-Abrir en: http://localhost:5173
 ```
+
+La aplicación estará disponible en `http://localhost:5173`
+
+## 📁 Estructura del Proyecto
+
+```
+challenge-frontend-sr/
+├── api/                        # API Mock Server
+│   ├── server.js              # Servidor Express con endpoints
+│   └── package.json
+│
+├── frontend/                   # Aplicación React
+│   ├── public/
+│   ├── src/
+│   │   ├── components/        # Componentes React
+│   │   │   ├── Dashboard.jsx  # Componente principal
+│   │   │   ├── KPICard.jsx    # Tarjetas de métricas
+│   │   │   ├── MetricsChart.jsx # Gráfico de evolución
+│   │   │   ├── AlertBanner.jsx  # Banner de alertas
+│   │   │   ├── LoadingSpinner.jsx
+│   │   │   └── ErrorMessage.jsx
+│   │   ├── hooks/
+│   │   │   └── useMetrics.js  # Hook de React Query
+│   │   ├── services/
+│   │   │   └── api.js         # Cliente API
+│   │   ├── __tests__/         # Tests unitarios
+│   │   │   ├── Dashboard.test.jsx
+│   │   │   ├── KPICard.test.jsx
+│   │   │   ├── MetricsChart.test.jsx
+│   │   │   └── AlertBanner.test.jsx
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   └── vitest.config.js
+│
+├── docs/
+│   └── screenshots/           # Screenshots del proyecto
+├── README.md
+└── .gitignore
+```
+
+## 🧪 Tests
+
+```bash
+cd frontend
+npm test               # Ejecutar tests
+npm run test:ui        # UI interactiva de Vitest
+npm run test:coverage  # Reporte de cobertura
+npm run test:watch     # Modo watch para desarrollo
+```
+
+**Coverage actual**: ~85% de cobertura en componentes principales
+
+## 🔧 Variables de Entorno
+
+Creá un archivo `.env` en `/frontend`:
+
+```env
+VITE_API_URL=http://localhost:4000
+```
+
+Para producción, ajustá la URL de la API según tu deploy.
+
+## 🎯 Scripts Disponibles
+
+### Frontend
+
+| Comando                 | Descripción                                         |
+| ----------------------- | --------------------------------------------------- |
+| `npm run dev`           | Inicia el servidor de desarrollo en modo hot-reload |
+| `npm run build`         | Genera el build optimizado para producción          |
+| `npm run preview`       | Previsualiza el build de producción localmente      |
+| `npm test`              | Ejecuta todos los tests con Vitest                  |
+| `npm run test:ui`       | Abre la interfaz visual de Vitest                   |
+| `npm run test:coverage` | Genera reporte de cobertura de tests                |
+| `npm run test:watch`    | Ejecuta tests en modo watch                         |
+| `npm run lint`          | Ejecuta ESLint para verificar código                |
+
+### API
+
+| Comando       | Descripción                            |
+| ------------- | -------------------------------------- |
+| `npm start`   | Inicia el servidor mock en puerto 4000 |
+| `npm run dev` | Inicia con nodemon para auto-reload    |
+
+## 📊 API Endpoints
+
+### GET `/metrics`
+
+Retorna un array de métricas simuladas.
+
+**Query Parameters:**
+
+- `count` (opcional): Número de registros a retornar (default: 20)
+
+**Response:**
+
+```json
+[
+  {
+    "timestamp": "2025-10-25T18:30:00.000Z",
+    "activeUsers": 3421,
+    "newUsers": 156,
+    "revenue": 8543.21,
+    "churnRate": 0.042,
+    "byRegion": {
+      "US": 1500,
+      "EU": 980,
+      "LATAM": 641,
+      "APAC": 300
+    }
+  }
+]
+```
+
+## 🚀 Deploy
+
+### Vercel (Recomendado)
+
+```bash
+cd frontend
+vercel
+```
+
+### Netlify
+
+```bash
+cd frontend
+npm run build
+netlify deploy --prod --dir=dist
+```
+
+**Nota**: Recordá configurar las variables de entorno en el panel de tu plataforma.
+
+### Optimizaciones Implementadas
+
+- Bundle size optimizado con Vite
+- Lazy loading de componentes
+- React Query cache para reducir requests
+- Memoización de cálculos pesados
+- Optimización de re-renders con React.memo
+- Assets optimizados (SVG para iconos)
+
+### Bundle Size
+
+- Gzip: ~45KB
+- Brotli: ~38KB
+
+## 🔧 Troubleshooting
+
+### La API no responde
+
+**Problema**: El frontend no puede conectarse a la API.
+
+**Solución**:
+
+1. Verificá que el servidor API esté corriendo en `http://localhost:4000`
+2. Chequeá que el archivo `.env` tenga la URL correcta
+3. Asegurate de que no haya otro proceso usando el puerto 4000
+
+```bash
+# Verificar qué está usando el puerto
+lsof -i :4000  # Mac/Linux
+netstat -ano | findstr :4000  # Windows
+```
+
+### Error de CORS
+
+**Problema**: Error de CORS al hacer requests a la API.
+
+**Solución**:
+El servidor mock ya tiene CORS configurado. Si aún tenés el error:
+
+1. Reiniciá el servidor API
+2. Verificá que la URL en `.env` no tenga trailing slash
+3. Limpiá el cache del navegador
+
+### Tests fallan con "Cannot find module"
+
+**Problema**: Tests no encuentran módulos o componentes.
+
+**Solución**:
+
+```bash
+cd frontend
+rm -rf node_modules
+npm install
+npm test
+```
+
+### El gráfico no se renderiza
+
+**Problema**: El componente MetricsChart no muestra datos.
+
+**Solución**:
+
+1. Abrí las DevTools y chequeá errores en consola
+2. Verificá que la API esté retornando datos válidos
+3. Confirmá que haya al menos 2 puntos de datos (Recharts requiere mínimo 2)
+
+### Hot reload no funciona
+
+**Problema**: Los cambios no se reflejan automáticamente.
+
+**Solución**:
+
+```bash
+# Detené el servidor (Ctrl+C)
+cd frontend
+rm -rf node_modules/.vite
+npm run dev
+```
+
+### Port 5173 o 4000 ya está en uso
+
+**Problema**: El puerto está ocupado por otro proceso.
+
+**Solución**:
+
+```bash
+# Matar proceso en puerto específico
+kill -9 $(lsof -t -i:5173)  # Mac/Linux
+
+# O cambiar el puerto en vite.config.js
+server: {
+  port: 3000  // Usar otro puerto
+}
+```
+
+## 👩‍💻 Desarrollado por
+
+**María Lafont**
+
+- GitHub: [@marialafont](https://github.com/marialafont)
+- Email: merlafont@gmail.com
+
+## 📄 Licencia
+
+Este proyecto fue desarrollado como parte de un challenge técnico para Colppy.

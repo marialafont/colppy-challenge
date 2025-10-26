@@ -2,12 +2,14 @@ const LoadingSpinner = () => {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center animate-fade-in">
-        <div className="relative">
-          <div className="animate-spin rounded-full h-20 w-20 border-4 border-gray-200 border-t-primary-600 mx-auto mb-6"></div>
-          <div className="absolute inset-0 animate-ping rounded-full h-20 w-20 border-4 border-primary-400 opacity-20 mx-auto"></div>
+        <div className="relative inline-block">
+          <div className="w-16 h-16 border-4 border-purple-200 rounded-full"></div>
+          <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
         </div>
-        <p className="text-gray-700 text-lg font-semibold">Cargando métricas...</p>
-        <p className="text-gray-500 text-sm mt-2">Conectando con el servidor</p>
+        <div className="mt-6">
+          <h2 className="text-lg font-semibold text-neutral-900 mb-1">Cargando métricas</h2>
+          <p className="text-sm text-neutral-500">Esto solo tomará un momento...</p>
+        </div>
       </div>
     </div>
   );

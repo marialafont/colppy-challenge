@@ -7,24 +7,27 @@ const ErrorMessage = ({ message }) => {
 
   return (
     <div className="flex items-center justify-center min-h-screen p-4">
-      <div
-        className="bg-white border-2 border-danger-200 rounded-2xl p-8 max-w-md shadow-soft-lg animate-fade-in"
-        role="alert"
-      >
-        <div className="flex items-center justify-center w-16 h-16 bg-danger-100 rounded-full mx-auto mb-4">
-          <AlertCircle className="w-8 h-8 text-danger-600" />
+      <div className="card p-8 max-w-md w-full animate-scale-in">
+        <div className="flex flex-col items-center text-center">
+          <div className="w-16 h-16 bg-danger-100 rounded-full flex items-center justify-center mb-6">
+            <AlertCircle className="w-8 h-8 text-danger-600" strokeWidth={2.5} />
+          </div>
+
+          <h2 className="text-xl font-bold text-neutral-900 mb-2">Error al cargar datos</h2>
+
+          <p className="text-sm text-neutral-600 mb-6">
+            {message ||
+              'Ocurrió un problema al cargar las métricas. Por favor, intenta nuevamente.'}
+          </p>
+
+          <button
+            onClick={handleRefresh}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-soft hover:shadow-soft-lg active:scale-95"
+          >
+            <RefreshCw className="w-5 h-5" />
+            Reintentar
+          </button>
         </div>
-        <h2 className="text-danger-900 text-2xl font-bold mb-2 text-center">
-          Error al cargar datos
-        </h2>
-        <p className="text-danger-700 font-medium text-center mb-6">{message}</p>
-        <button
-          onClick={handleRefresh}
-          className="w-full flex items-center justify-center gap-2 bg-danger-600 hover:bg-danger-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:shadow-lg"
-        >
-          <RefreshCw className="w-5 h-5" />
-          Reintentar
-        </button>
       </div>
     </div>
   );

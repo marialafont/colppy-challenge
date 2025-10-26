@@ -8,20 +8,20 @@ const KPICard = ({ metric, value, config, showAlert = false }) => {
   return (
     <div
       className={`
-        card p-7 group h-[280px] flex flex-col
+        card p-6 group h-[220px] flex flex-col
         ${isAlert ? 'ring-2 ring-danger-300/60 bg-danger-50/50' : ''}
         animate-fade-in-up
       `}
       role="article"
       aria-label={`${label}: ${format(value)}`}
     >
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex items-start justify-between mb-4">
         <div className={`${bgColor} p-4 rounded-2xl shadow-soft-lg`}>
           <Icon className={`w-7 h-7 ${iconColor}`} strokeWidth={2.5} aria-hidden="true" />
         </div>
       </div>
 
-      <div className="space-y-2 flex-grow">
+      <div className="space-y-1.5 flex-grow">
         <p
           className="text-xs font-semibold text-neutral-500 uppercase tracking-wider"
           id={`${metric}-label`}
@@ -53,7 +53,7 @@ const KPICard = ({ metric, value, config, showAlert = false }) => {
       )}
 
       {!isAlert && (
-        <div className="mt-auto pt-5 border-t border-neutral-100/80">
+        <div className="mt-auto pt-4 border-t border-neutral-100/80">
           <p className="text-xs text-neutral-400 font-medium flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-success-500 rounded-full"></span>
             Actualizado hace 5s

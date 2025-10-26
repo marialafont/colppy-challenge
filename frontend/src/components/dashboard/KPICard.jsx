@@ -8,22 +8,22 @@ const KPICard = ({ metric, value, config, showAlert = false }) => {
   return (
     <div
       className={`
-        card p-6 group
-        ${isAlert ? 'ring-2 ring-danger-300/50 bg-danger-50/40' : ''}
+        card p-7 group h-[280px] flex flex-col
+        ${isAlert ? 'ring-2 ring-danger-300/60 bg-danger-50/50' : ''}
         animate-fade-in-up
       `}
       role="article"
       aria-label={`${label}: ${format(value)}`}
     >
-      <div className="flex items-start justify-between mb-5">
-        <div className={`icon-container ${bgColor}`}>
-          <Icon className={`w-6 h-6 ${iconColor}`} strokeWidth={2.5} aria-hidden="true" />
+      <div className="flex items-start justify-between mb-6">
+        <div className={`${bgColor} p-4 rounded-2xl shadow-soft-lg`}>
+          <Icon className={`w-7 h-7 ${iconColor}`} strokeWidth={2.5} aria-hidden="true" />
         </div>
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-2 flex-grow">
         <p
-          className="text-sm font-medium text-neutral-500 uppercase tracking-wide"
+          className="text-xs font-semibold text-neutral-500 uppercase tracking-wider"
           id={`${metric}-label`}
         >
           {label}
@@ -39,11 +39,7 @@ const KPICard = ({ metric, value, config, showAlert = false }) => {
       </div>
 
       {isAlert && (
-        <div
-          className="mt-5 p-3 bg-danger-100/50 backdrop-blur-sm border border-danger-200/50 rounded-2xl"
-          role="alert"
-          aria-live="polite"
-        >
+        <div className="mt-auto" role="alert" aria-live="polite">
           <div className="flex items-start gap-2">
             <span className="flex h-2 w-2 mt-1.5">
               <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-danger-400 opacity-75"></span>
@@ -57,8 +53,11 @@ const KPICard = ({ metric, value, config, showAlert = false }) => {
       )}
 
       {!isAlert && (
-        <div className="mt-5 pt-4 border-t border-neutral-100/60">
-          <p className="text-xs text-neutral-400 font-medium">Actualizado hace 5s</p>
+        <div className="mt-auto pt-5 border-t border-neutral-100/80">
+          <p className="text-xs text-neutral-400 font-medium flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-success-500 rounded-full"></span>
+            Actualizado hace 5s
+          </p>
         </div>
       )}
     </div>

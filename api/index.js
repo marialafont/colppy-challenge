@@ -1,5 +1,5 @@
-import express from "express";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
 
 const app = express();
 app.use(cors());
@@ -23,12 +23,14 @@ function generateMetrics() {
 }
 
 // Endpoint de métricas simuladas con volumen
-app.get("/metrics", (req, res) => {
+app.get('/metrics', (req, res) => {
   const { count = 20 } = req.query; // opcional: pasar ?count=50
-  const metricsArray = Array.from({ length: Number(count) }, () => generateMetrics());
+  const metricsArray = Array.from({ length: Number(count) }, () =>
+    generateMetrics()
+  );
   res.json(metricsArray);
 });
 
 app.listen(4000, () =>
-  console.log("Mock API running on http://localhost:4000")
+  console.log('Mock API running on http://localhost:4000')
 );

@@ -28,7 +28,7 @@ const Dashboard = () => {
               <div>
                 <h1 className="text-3xl font-bold text-white mb-2">Analytics Dashboard</h1>
                 <p className="text-purple-100 font-medium">
-                  Monitoreo en tiempo real de métricas clave del negocio
+                  Monitoreo en tiempo real de métricas clave.
                 </p>
               </div>
 

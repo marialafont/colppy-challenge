@@ -2,6 +2,11 @@
 
 Dashboard analítico en tiempo real desarrollado con React, mostrando métricas clave de negocio con actualización automática cada 5 segundos.
 
+## 🔗 Demo en Vivo
+
+- **Frontend**: [https://frontend-production-75d4.up.railway.app](https://frontend-production-75d4.up.railway.app)
+- **API**: [https://api-production-7e03.up.railway.app](https://api-production-7e03.up.railway.app)
+
 ## 🌟 Características
 
 - **📈 Métricas en Tiempo Real**: Visualización de usuarios activos, ingresos y tasa de churn
@@ -191,19 +196,25 @@ Retorna un array de métricas simuladas.
 
 Este proyecto está deployado en Railway, con el frontend y la API corriendo como servicios independientes.
 
+**URLs de producción:**
+- Frontend: https://frontend-production-75d4.up.railway.app
+- API: https://api-production-7e03.up.railway.app
+
 **Configuración:**
 
 1. Frontend:
-   - Build Command: `cd frontend && npm install && npm run build`
-   - Start Command: `cd frontend && npm run preview -- --host 0.0.0.0`
-   - Variables de entorno: `VITE_API_URL` apuntando a la URL del servicio API
+   - Root Directory: `frontend`
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm run serve`
+   - Variables de entorno: `VITE_API_URL=https://api-production-7e03.up.railway.app`
 
 2. API:
-   - Build Command: `cd api && npm install`
-   - Start Command: `cd api && npm start`
+   - Root Directory: `api`
+   - Build Command: `npm install`
+   - Start Command: `npm start`
    - Puerto configurado automáticamente por Railway
 
-**Nota**: Asegurate de configurar las variables de entorno correctamente en el dashboard de Railway.
+**Nota**: Los archivos `railway.toml` en cada carpeta contienen la configuración de despliegue.
 
 ### Alternativas
 

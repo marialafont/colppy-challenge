@@ -1,6 +1,7 @@
 import { Users, DollarSign, TrendingDown } from 'lucide-react';
 
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const rawApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+export const API_URL = rawApiUrl.replace(/\/+$/, '');
 
 export const POLLING_INTERVAL = 5000;
 

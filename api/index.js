@@ -6,7 +6,8 @@ const PORT = process.env.PORT || 4000;
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://api-production-7e03.up.railway.app/',
+  'https://frontend-production-75d4.up.railway.app',
+  'https://api-production-7e03.up.railway.app',
 ];
 
 app.use(

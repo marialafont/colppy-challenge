@@ -187,22 +187,38 @@ Retorna un array de métricas simuladas.
 
 ## 🚀 Deploy
 
-### Vercel (Recomendado)
+### Railway (Implementado)
 
+Este proyecto está deployado en Railway, con el frontend y la API corriendo como servicios independientes.
+
+**Configuración:**
+
+1. Frontend:
+   - Build Command: `cd frontend && npm install && npm run build`
+   - Start Command: `cd frontend && npm run preview -- --host 0.0.0.0`
+   - Variables de entorno: `VITE_API_URL` apuntando a la URL del servicio API
+
+2. API:
+   - Build Command: `cd api && npm install`
+   - Start Command: `cd api && npm start`
+   - Puerto configurado automáticamente por Railway
+
+**Nota**: Asegurate de configurar las variables de entorno correctamente en el dashboard de Railway.
+
+### Alternativas
+
+**Vercel:**
 ```bash
 cd frontend
 vercel
 ```
 
-### Netlify
-
+**Netlify:**
 ```bash
 cd frontend
 npm run build
 netlify deploy --prod --dir=dist
 ```
-
-**Nota**: Recordá configurar las variables de entorno en el panel de tu plataforma.
 
 ### Optimizaciones Implementadas
 
